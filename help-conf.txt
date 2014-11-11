@@ -1,0 +1,21 @@
+dans php.ini :
+
+upload_max_filesize = 10M
+post_max_size = 30M
+
+dans httpd.conf :
+
+1 - enlever le commentaire de la ligne : LoadModule rewrite_module modules/mod_rewrite.so
+2 - 
+	remplacer :
+<Directory />
+    Options FollowSymLinks
+    AllowOverride None
+    Order deny,allow
+    Deny from all
+</Directory>
+	par :
+<Directory /> 
+Options All 
+AllowOverride All 
+</Directory>
